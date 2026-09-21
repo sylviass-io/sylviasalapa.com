@@ -12,6 +12,7 @@
     content="Sylvia Salapa is a Market & Competitive Intelligence professional based in Poznań, Poland, with 10+ years of experience across B2B SaaS, competitive intelligence, market intelligence and AI-enabled intelligence workflows."
   >
 
+  <!-- Editorial display type -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -19,7 +20,46 @@
     rel="stylesheet"
   >
 
+  <!-- Set saved/system theme before page renders -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("sylvia-theme");
+
+      if (savedTheme) {
+        document.documentElement.dataset.theme = savedTheme;
+      } else {
+        document.documentElement.dataset.theme =
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "night"
+            : "day";
+      }
+    })();
+  </script>
+
   <style>
+
+    /* =========================
+       COLOUR SYSTEM
+       ========================= */
+
+    :root {
+      --background: #C8BDAE;
+      --text: #24231F;
+      --body-text: #48443D;
+      --muted: #6F685E;
+      --rule: #A99E8F;
+      --header: rgba(200, 189, 174, 0.96);
+    }
+
+    html[data-theme="night"] {
+      --background: #0B0D0B;
+      --text: #ECE9E1;
+      --body-text: #D5D1C8;
+      --muted: #9E9A91;
+      --rule: #282A27;
+      --header: rgba(11, 13, 11, 0.96);
+    }
+
 
     /* =========================
        BASE
@@ -33,13 +73,18 @@
 
     html {
       scroll-behavior: smooth;
+      background: var(--background);
     }
 
     body {
-      background: #DDD5C7;
-      color: #20211E;
+      background: var(--background);
+      color: var(--text);
       font-family: "Bodoni Moda", Georgia, serif;
       line-height: 1.55;
+
+      transition:
+        background-color 0.35s ease,
+        color 0.35s ease;
     }
 
     a {
@@ -49,7 +94,7 @@
 
     p {
       font-size: 18px;
-      color: #45443F;
+      color: var(--body-text);
     }
 
     .container {
@@ -66,8 +111,10 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(221, 213, 199, 0.95);
+      background: var(--header);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: background-color 0.35s ease;
     }
 
     nav {
@@ -75,11 +122,19 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 30px;
     }
 
     .name {
       font-size: 20px;
-      color: #20211E;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 34px;
     }
 
     .nav-links {
@@ -94,6 +149,35 @@
     }
 
     .nav-links a:hover {
+      opacity: 1;
+    }
+
+
+    /* =========================
+       DAY / NIGHT TOGGLE
+       ========================= */
+
+    .theme-toggle {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      font-family: "Bodoni Moda", Georgia, serif;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 7px 0 5px;
+      border-bottom: 1px solid var(--text);
+      opacity: 0.72;
+      transition:
+        opacity 0.2s ease,
+        color 0.35s ease,
+        border-color 0.35s ease;
+    }
+
+    .theme-toggle:hover {
       opacity: 1;
     }
 
@@ -116,7 +200,7 @@
       line-height: 0.98;
       letter-spacing: -0.045em;
       max-width: 1200px;
-      color: #20211E;
+      color: var(--text);
     }
 
     .hero-intro {
@@ -130,7 +214,7 @@
       font-size: 14px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #716C63;
+      color: var(--muted);
     }
 
 
@@ -140,7 +224,7 @@
 
     section.content {
       padding: 150px 0;
-      border-top: 1px solid #BDB4A5;
+      border-top: 1px solid var(--rule);
     }
 
     .eyebrow {
@@ -148,7 +232,7 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       margin-bottom: 35px;
-      color: #716C63;
+      color: var(--muted);
     }
 
     h2 {
@@ -157,14 +241,14 @@
       font-weight: 400;
       letter-spacing: -0.035em;
       margin-bottom: 45px;
-      color: #20211E;
+      color: var(--text);
     }
 
     h3 {
       font-size: 30px;
       line-height: 1.15;
       font-weight: 400;
-      color: #20211E;
+      color: var(--text);
     }
 
     .section-copy {
@@ -181,12 +265,6 @@
        EXPERIENCE
        ========================= */
 
-    .statement {
-      font-size: 22px;
-      color: #20211E;
-      margin-top: 32px;
-    }
-
     .timeline {
       margin-top: 100px;
     }
@@ -195,22 +273,22 @@
       display: grid;
       grid-template-columns: 25% 75%;
       padding: 35px 0;
-      border-top: 1px solid #BDB4A5;
+      border-top: 1px solid var(--rule);
     }
 
     .role:last-child {
-      border-bottom: 1px solid #BDB4A5;
+      border-bottom: 1px solid var(--rule);
     }
 
     .role-date {
       font-size: 13px;
       letter-spacing: 0.1em;
-      color: #716C63;
+      color: var(--muted);
     }
 
     .role-company {
       margin-top: 8px;
-      color: #716C63;
+      color: var(--muted);
       font-size: 16px;
     }
 
@@ -220,7 +298,7 @@
       font-size: 14px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      border-bottom: 1px solid #20211E;
+      border-bottom: 1px solid var(--text);
       padding-bottom: 5px;
     }
 
@@ -237,15 +315,15 @@
       display: grid;
       grid-template-columns: 25% 75%;
       padding: 50px 0;
-      border-top: 1px solid #BDB4A5;
+      border-top: 1px solid var(--rule);
     }
 
     .thinking-item:last-child {
-      border-bottom: 1px solid #BDB4A5;
+      border-bottom: 1px solid var(--rule);
     }
 
     .thinking-number {
-      color: #716C63;
+      color: var(--muted);
       font-size: 14px;
     }
 
@@ -262,7 +340,7 @@
     .about-text {
       font-size: clamp(25px, 3vw, 42px);
       line-height: 1.3;
-      color: #20211E;
+      color: var(--text);
       margin-bottom: 35px;
     }
 
@@ -281,7 +359,7 @@
     .contact h2 {
       font-size: clamp(65px, 9vw, 135px);
       font-style: italic;
-      color: #20211E;
+      color: var(--text);
     }
 
     .contact-links {
@@ -294,7 +372,7 @@
     }
 
     .contact-links a {
-      border-bottom: 1px solid #20211E;
+      border-bottom: 1px solid var(--text);
       padding-bottom: 5px;
     }
 
@@ -304,10 +382,10 @@
        ========================= */
 
     footer {
-      border-top: 1px solid #BDB4A5;
+      border-top: 1px solid var(--rule);
       padding: 35px 0;
       font-size: 13px;
-      color: #716C63;
+      color: var(--muted);
     }
 
 
@@ -323,6 +401,7 @@
 
       nav {
         min-height: 75px;
+        gap: 16px;
       }
 
       .name {
@@ -333,6 +412,10 @@
         display: none;
       }
 
+      .nav-right {
+        gap: 15px;
+      }
+
       .nav-links {
         gap: 15px;
         font-size: 13px;
@@ -340,6 +423,10 @@
 
       .nav-links a:nth-child(3) {
         display: none;
+      }
+
+      .theme-toggle {
+        font-size: 9px;
       }
 
       .hero {
@@ -378,6 +465,17 @@
       }
     }
 
+    @media (max-width: 560px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: clamp(46px, 13vw, 64px);
+      }
+    }
+
   </style>
 </head>
 
@@ -385,6 +483,7 @@
 <body>
 
 <header>
+
   <nav class="container">
 
     <a class="name" href="#home">
@@ -392,14 +491,28 @@
       <span>| Market & Competitive Intelligence</span>
     </a>
 
-    <div class="nav-links">
-      <a href="#experience">Experience</a>
-      <a href="#thinking">Thinking</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-right">
+
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#thinking">Thinking</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        type="button"
+        aria-label="Switch colour theme"
+      >
+        Night
+      </button>
+
     </div>
 
   </nav>
+
 </header>
 
 
@@ -409,10 +522,10 @@
 
   <section class="hero container" id="home">
 
-<h1>
-  Markets move.<br>
-  Intelligence should too.
-</h1>
+    <h1>
+      Markets move.<br>
+      Intelligence should too.
+    </h1>
 
     <div class="hero-intro">
 
@@ -454,12 +567,6 @@
           programmes in B2B SaaS with platforms including Crayon and
           Klue — and designing AI-enabled workflows that continuously
           discover, analyse and distribute intelligence.
-        </p>
-
-        <p class="statement">
-          <strong>
-            Markets move continuously. Intelligence should too.
-          </strong>
         </p>
 
         <p>
@@ -670,10 +777,44 @@
 
 
 <footer>
+
   <div class="container">
     © 2026 Sylvia Salapa · Poznań, Poland
   </div>
+
 </footer>
+
+
+<script>
+
+  const themeToggle = document.getElementById("theme-toggle");
+
+  function updateToggleLabel() {
+    const currentTheme = document.documentElement.dataset.theme;
+
+    themeToggle.textContent =
+      currentTheme === "night" ? "Day" : "Night";
+  }
+
+  updateToggleLabel();
+
+  themeToggle.addEventListener("click", function () {
+
+    const currentTheme =
+      document.documentElement.dataset.theme;
+
+    const newTheme =
+      currentTheme === "night" ? "day" : "night";
+
+    document.documentElement.dataset.theme = newTheme;
+
+    localStorage.setItem("sylvia-theme", newTheme);
+
+    updateToggleLabel();
+
+  });
+
+</script>
 
 </body>
 </html>
