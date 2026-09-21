@@ -389,7 +389,43 @@
 
       margin-top: 20px;
     }
+/* =========================
+   ELSEWHERE
+   ========================= */
 
+.elsewhere-grid {
+  margin-top: 70px;
+}
+
+.elsewhere-item {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  align-items: baseline;
+
+  padding: 38px 0;
+
+  border-top: 1px solid var(--rule);
+}
+
+.elsewhere-item:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.elsewhere-label {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: var(--muted);
+}
+
+.elsewhere-content {
+  font-size: clamp(24px, 2.5vw, 34px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+
+  color: var(--text);
+}
 
     /* =========================
        ABOUT
