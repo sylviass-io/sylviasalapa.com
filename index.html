@@ -220,10 +220,6 @@
     .hero h1 {
       font-weight: 400;
 
-      /*
-        Smaller than the previous 105px version.
-        Still dominant, but less poster-like.
-      */
       font-size: clamp(50px, 5.5vw, 84px);
 
       line-height: 1.02;
@@ -389,43 +385,46 @@
 
       margin-top: 20px;
     }
-/* =========================
-   ELSEWHERE
-   ========================= */
 
-.elsewhere-grid {
-  margin-top: 70px;
-}
 
-.elsewhere-item {
-  display: grid;
-  grid-template-columns: 25% 75%;
-  align-items: baseline;
+    /* =========================
+       ELSEWHERE
+       ========================= */
 
-  padding: 38px 0;
+    .elsewhere-grid {
+      margin-top: 70px;
+    }
 
-  border-top: 1px solid var(--rule);
-}
+    .elsewhere-item {
+      display: grid;
+      grid-template-columns: 25% 75%;
+      align-items: baseline;
 
-.elsewhere-item:last-child {
-  border-bottom: 1px solid var(--rule);
-}
+      padding: 38px 0;
 
-.elsewhere-label {
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+      border-top: 1px solid var(--rule);
+    }
 
-  color: var(--muted);
-}
+    .elsewhere-item:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
 
-.elsewhere-content {
-  font-size: clamp(24px, 2.5vw, 34px);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+    .elsewhere-label {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
 
-  color: var(--text);
-}
+      color: var(--muted);
+    }
+
+    .elsewhere-content {
+      font-size: clamp(24px, 2.5vw, 34px);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+
+      color: var(--text);
+    }
+
 
     /* =========================
        ABOUT
@@ -564,10 +563,14 @@
       }
 
       .role,
-      .thinking-item {
+      .thinking-item,
+      .elsewhere-item {
         grid-template-columns: 1fr;
-
         gap: 18px;
+      }
+
+      .elsewhere-content {
+        font-size: 25px;
       }
 
       .contact-links {
@@ -587,6 +590,7 @@
       .hero h1 {
         font-size: clamp(42px, 11vw, 56px);
       }
+
     }
 
   </style>
@@ -973,6 +977,95 @@
               identifying implications and helping organisations act.
             </p>
 
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       ELSEWHERE
+       ========================= -->
+
+  <section
+    class="content"
+    id="elsewhere"
+  >
+
+    <div class="container">
+
+
+      <div class="eyebrow">
+        Elsewhere
+      </div>
+
+
+      <h2>
+        What occupies my attention beyond work.
+      </h2>
+
+
+      <div class="elsewhere-grid">
+
+
+        <div class="elsewhere-item">
+
+          <div class="elsewhere-label">
+            Reading
+          </div>
+
+          <div class="elsewhere-content">
+            Susan Sontag · Annie Ernaux · Deborah Levy
+          </div>
+
+        </div>
+
+
+
+        <div class="elsewhere-item">
+
+          <div class="elsewhere-label">
+            Listening
+          </div>
+
+          <div class="elsewhere-content">
+            Jazz · classical · Italian music
+          </div>
+
+        </div>
+
+
+
+        <div class="elsewhere-item">
+
+          <div class="elsewhere-label">
+            Looking at
+          </div>
+
+          <div class="elsewhere-content">
+            Cities · architecture · interiors
+          </div>
+
+        </div>
+
+
+
+        <div class="elsewhere-item">
+
+          <div class="elsewhere-label">
+            Moving
+          </div>
+
+          <div class="elsewhere-content">
+            City cycling · basketball · longboarding
           </div>
 
         </div>
