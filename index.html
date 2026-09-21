@@ -7,21 +7,19 @@
 
   <title>Sylvia Salapa | Market & Competitive Intelligence</title>
 
-  
   <meta
     name="description"
     content="Sylvia Salapa is a Market & Competitive Intelligence professional based in Poznań, Poland, with 10+ years of experience across B2B SaaS, competitive intelligence, market intelligence and AI-enabled intelligence workflows."
   >
 
-  <!-- Editorial display type -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&display=swap"
     rel="stylesheet"
   >
 
-  <!-- Set saved/system theme before page renders -->
   <script>
     (function () {
       const savedTheme = localStorage.getItem("sylvia-theme");
@@ -37,28 +35,34 @@
     })();
   </script>
 
+
   <style>
 
     /* =========================
-       COLOUR SYSTEM
+       COLOUR SYSTEM — DAY
        ========================= */
 
     :root {
-      --background: #C8BDAE;
-      --text: #24231F;
-      --body-text: #48443D;
-      --muted: #6F685E;
-      --rule: #A99E8F;
-      --header: rgba(200, 189, 174, 0.96);
+      --background: #C8BFB2;
+      --text: #292722;
+      --body-text: #4D4942;
+      --muted: #716B62;
+      --rule: #AAA194;
+      --header: rgba(200, 191, 178, 0.96);
     }
 
+
+    /* =========================
+       COLOUR SYSTEM — NIGHT
+       ========================= */
+
     html[data-theme="night"] {
-      --background: #0B0D0B;
-      --text: #ECE9E1;
-      --body-text: #D5D1C8;
-      --muted: #9E9A91;
-      --rule: #282A27;
-      --header: rgba(11, 13, 11, 0.96);
+      --background: #151512;
+      --text: #D8D2C7;
+      --body-text: #BDB7AD;
+      --muted: #89847C;
+      --rule: #34332E;
+      --header: rgba(21, 21, 18, 0.96);
     }
 
 
@@ -96,6 +100,8 @@
     p {
       font-size: 18px;
       color: var(--body-text);
+
+      transition: color 0.35s ease;
     }
 
     .container {
@@ -112,17 +118,22 @@
       position: sticky;
       top: 0;
       z-index: 100;
+
       background: var(--header);
+
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
+
       transition: background-color 0.35s ease;
     }
 
     nav {
       min-height: 95px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 30px;
     }
 
@@ -161,17 +172,26 @@
     .theme-toggle {
       appearance: none;
       -webkit-appearance: none;
+
       border: 0;
       background: transparent;
+
       color: var(--text);
+
       font-family: "Bodoni Moda", Georgia, serif;
       font-size: 11px;
+
       letter-spacing: 0.14em;
       text-transform: uppercase;
+
       cursor: pointer;
+
       padding: 7px 0 5px;
+
       border-bottom: 1px solid var(--text);
+
       opacity: 0.72;
+
       transition:
         opacity 0.2s ease,
         color 0.35s ease,
@@ -189,32 +209,45 @@
 
     .hero {
       min-height: 82vh;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 80px 0 130px;
+
+      padding: 80px 0 125px;
     }
 
     .hero h1 {
       font-weight: 400;
-      font-size: clamp(55px, 6.7vw, 105px);
-      line-height: 0.98;
-      letter-spacing: -0.045em;
-      max-width: 1200px;
+
+      /*
+        Smaller than the previous 105px version.
+        Still dominant, but less poster-like.
+      */
+      font-size: clamp(50px, 5.5vw, 84px);
+
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+
+      max-width: 1100px;
+
       color: var(--text);
     }
 
     .hero-intro {
       width: 50%;
+
       margin-left: 42%;
-      margin-top: 65px;
+      margin-top: 60px;
     }
 
     .location {
       margin-top: 24px;
+
       font-size: 14px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+
       color: var(--muted);
     }
 
@@ -232,23 +265,32 @@
       font-size: 13px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
+
       margin-bottom: 35px;
+
       color: var(--muted);
     }
 
     h2 {
       font-size: clamp(42px, 5vw, 72px);
+
       line-height: 1.05;
+
       font-weight: 400;
       letter-spacing: -0.035em;
+
       margin-bottom: 45px;
+
       color: var(--text);
     }
 
     h3 {
       font-size: 30px;
+
       line-height: 1.15;
+
       font-weight: 400;
+
       color: var(--text);
     }
 
@@ -273,7 +315,9 @@
     .role {
       display: grid;
       grid-template-columns: 25% 75%;
+
       padding: 35px 0;
+
       border-top: 1px solid var(--rule);
     }
 
@@ -283,23 +327,32 @@
 
     .role-date {
       font-size: 13px;
+
       letter-spacing: 0.1em;
+
       color: var(--muted);
     }
 
     .role-company {
       margin-top: 8px;
+
       color: var(--muted);
+
       font-size: 16px;
     }
 
     .linkedin-link {
       display: inline-block;
+
       margin-top: 50px;
+
       font-size: 14px;
+
       letter-spacing: 0.1em;
       text-transform: uppercase;
+
       border-bottom: 1px solid var(--text);
+
       padding-bottom: 5px;
     }
 
@@ -315,7 +368,9 @@
     .thinking-item {
       display: grid;
       grid-template-columns: 25% 75%;
+
       padding: 50px 0;
+
       border-top: 1px solid var(--rule);
     }
 
@@ -325,11 +380,13 @@
 
     .thinking-number {
       color: var(--muted);
+
       font-size: 14px;
     }
 
     .thinking-item p {
       max-width: 700px;
+
       margin-top: 20px;
     }
 
@@ -340,8 +397,11 @@
 
     .about-text {
       font-size: clamp(25px, 3vw, 42px);
+
       line-height: 1.3;
+
       color: var(--text);
+
       margin-bottom: 35px;
     }
 
@@ -352,6 +412,7 @@
 
     .contact {
       min-height: 70vh;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -359,21 +420,28 @@
 
     .contact h2 {
       font-size: clamp(65px, 9vw, 135px);
+
       font-style: italic;
+
       color: var(--text);
     }
 
     .contact-links {
       display: flex;
+
       gap: 35px;
+
       margin-top: 40px;
+
       font-size: 16px;
+
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
 
     .contact-links a {
       border-bottom: 1px solid var(--text);
+
       padding-bottom: 5px;
     }
 
@@ -384,8 +452,11 @@
 
     footer {
       border-top: 1px solid var(--rule);
+
       padding: 35px 0;
+
       font-size: 13px;
+
       color: var(--muted);
     }
 
@@ -436,11 +507,13 @@
       }
 
       .hero h1 {
-        font-size: clamp(48px, 14vw, 70px);
+        font-size: clamp(44px, 11vw, 62px);
+        line-height: 1.03;
       }
 
       .hero-intro {
         width: 100%;
+
         margin-left: 0;
         margin-top: 50px;
       }
@@ -457,14 +530,17 @@
       .role,
       .thinking-item {
         grid-template-columns: 1fr;
+
         gap: 18px;
       }
 
       .contact-links {
         flex-direction: column;
+
         align-items: flex-start;
       }
     }
+
 
     @media (max-width: 560px) {
 
@@ -473,7 +549,7 @@
       }
 
       .hero h1 {
-        font-size: clamp(46px, 13vw, 64px);
+        font-size: clamp(42px, 11vw, 56px);
       }
     }
 
@@ -482,6 +558,7 @@
 
 
 <body>
+
 
 <header>
 
@@ -492,14 +569,29 @@
       <span>| Market & Competitive Intelligence</span>
     </a>
 
+
     <div class="nav-right">
 
       <div class="nav-links">
-        <a href="#experience">Experience</a>
-        <a href="#thinking">Thinking</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+
+        <a href="#experience">
+          Experience
+        </a>
+
+        <a href="#thinking">
+          Thinking
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
       </div>
+
 
       <button
         class="theme-toggle"
@@ -517,16 +609,24 @@
 </header>
 
 
+
 <main>
 
-  <!-- HERO -->
 
-  <section class="hero container" id="home">
+  <!-- =========================
+       HERO
+       ========================= -->
+
+  <section
+    class="hero container"
+    id="home"
+  >
 
     <h1>
       Markets move.<br>
       Intelligence should too.
     </h1>
+
 
     <div class="hero-intro">
 
@@ -537,6 +637,7 @@
         decision-making.
       </p>
 
+
       <div class="location">
         Poznań, Poland · Working across Europe
       </div>
@@ -546,21 +647,30 @@
   </section>
 
 
-  <!-- EXPERIENCE -->
 
-  <section class="content" id="experience">
+  <!-- =========================
+       EXPERIENCE
+       ========================= -->
+
+  <section
+    class="content"
+    id="experience"
+  >
 
     <div class="container">
+
 
       <div class="eyebrow">
         Experience
       </div>
+
 
       <div class="section-copy">
 
         <h2>
           From Google searches to AI-enabled intelligence.
         </h2>
+
 
         <p>
           Over 10+ years, I've moved from manual competitor research
@@ -569,6 +679,7 @@
           Klue — and designing AI-enabled workflows that continuously
           discover, analyse and distribute intelligence.
         </p>
+
 
         <p>
           AI-enabled workflows automate repetitive signal discovery
@@ -579,49 +690,121 @@
       </div>
 
 
+
       <div class="timeline">
 
-        <div class="role">
-          <div class="role-date">2026 — PRESENT</div>
-          <div>
-            <h3>Market & Competitive Intelligence Lead</h3>
-            <div class="role-company">Teciem</div>
-          </div>
-        </div>
 
         <div class="role">
-          <div class="role-date">2025 — 2026</div>
-          <div>
-            <h3>Market & Competitive Intelligence Platform Lead</h3>
-            <div class="role-company">Sopra Steria</div>
+
+          <div class="role-date">
+            2026 — PRESENT
           </div>
+
+          <div>
+
+            <h3>
+              Market & Competitive Intelligence Lead
+            </h3>
+
+            <div class="role-company">
+              Teciem
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="role">
-          <div class="role-date">2023 — 2025</div>
-          <div>
-            <h3>Competitive Intelligence · Product Marketing</h3>
-            <div class="role-company">Mews</div>
-          </div>
-        </div>
+
 
         <div class="role">
-          <div class="role-date">2022 — 2023</div>
-          <div>
-            <h3>Competitive Intelligence</h3>
-            <div class="role-company">Codility</div>
+
+          <div class="role-date">
+            2025 — 2026
           </div>
+
+          <div>
+
+            <h3>
+              Market & Competitive Intelligence Platform Lead
+            </h3>
+
+            <div class="role-company">
+              Sopra Steria
+            </div>
+
+          </div>
+
         </div>
 
+
+
         <div class="role">
-          <div class="role-date">2016 — 2021</div>
-          <div>
-            <h3>Senior Market Analyst</h3>
-            <div class="role-company">Serco</div>
+
+          <div class="role-date">
+            2023 — 2025
           </div>
+
+          <div>
+
+            <h3>
+              Competitive Intelligence · Product Marketing
+            </h3>
+
+            <div class="role-company">
+              Mews
+            </div>
+
+          </div>
+
         </div>
+
+
+
+        <div class="role">
+
+          <div class="role-date">
+            2022 — 2023
+          </div>
+
+          <div>
+
+            <h3>
+              Competitive Intelligence
+            </h3>
+
+            <div class="role-company">
+              Codility
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="role">
+
+          <div class="role-date">
+            2016 — 2021
+          </div>
+
+          <div>
+
+            <h3>
+              Senior Market Analyst
+            </h3>
+
+            <div class="role-company">
+              Serco
+            </div>
+
+          </div>
+
+        </div>
+
 
       </div>
+
 
       <a
         class="linkedin-link"
@@ -632,99 +815,168 @@
         Full experience on LinkedIn ↗
       </a>
 
+
     </div>
 
   </section>
 
 
-  <!-- THINKING -->
 
-  <section class="content" id="thinking">
+  <!-- =========================
+       THINKING
+       ========================= -->
+
+  <section
+    class="content"
+    id="thinking"
+  >
 
     <div class="container">
+
 
       <div class="eyebrow">
         Thinking
       </div>
 
+
       <h2>
         Where intelligence is going.
       </h2>
 
+
       <div class="thinking-grid">
 
+
         <div class="thinking-item">
-          <div class="thinking-number">01</div>
+
+          <div class="thinking-number">
+            01
+          </div>
+
           <div>
-            <h3>Continuous intelligence</h3>
+
+            <h3>
+              Continuous intelligence
+            </h3>
+
             <p>
               Moving from periodic research and static competitor
               profiles towards always-on signal detection and
               intelligence that evolves as markets change.
             </p>
+
           </div>
+
         </div>
 
+
+
         <div class="thinking-item">
-          <div class="thinking-number">02</div>
+
+          <div class="thinking-number">
+            02
+          </div>
+
           <div>
-            <h3>AI-enabled workflows</h3>
+
+            <h3>
+              AI-enabled workflows
+            </h3>
+
             <p>
               Using AI to accelerate discovery, classification and
               synthesis while keeping validation, interpretation
               and strategic judgement human.
             </p>
+
           </div>
+
         </div>
 
+
+
         <div class="thinking-item">
-          <div class="thinking-number">03</div>
+
+          <div class="thinking-number">
+            03
+          </div>
+
           <div>
-            <h3>Intelligence architecture</h3>
+
+            <h3>
+              Intelligence architecture
+            </h3>
+
             <p>
               Connecting market signals, competitive knowledge and
               commercial data into systems that make intelligence
               accessible rather than creating another repository.
             </p>
+
           </div>
+
         </div>
 
+
+
         <div class="thinking-item">
-          <div class="thinking-number">04</div>
+
+          <div class="thinking-number">
+            04
+          </div>
+
           <div>
-            <h3>The changing role of the analyst</h3>
+
+            <h3>
+              The changing role of the analyst
+            </h3>
+
             <p>
               As finding information becomes easier, the value of the
               analyst moves towards asking better questions,
               identifying implications and helping organisations act.
             </p>
+
           </div>
+
         </div>
 
+
       </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- ABOUT -->
 
-  <section class="content" id="about">
+  <!-- =========================
+       ABOUT
+       ========================= -->
+
+  <section
+    class="content"
+    id="about"
+  >
 
     <div class="container">
+
 
       <div class="eyebrow">
         About
       </div>
 
+
       <div class="section-copy">
+
 
         <p class="about-text">
           I'm a Market & Competitive Intelligence professional based
           in Poznań, Poland, with 10+ years of experience across the
           UK and Europe.
         </p>
+
 
         <p>
           My background spans B2B SaaS, technology and complex
@@ -733,32 +985,45 @@
           technology.
         </p>
 
+
       </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- CONTACT -->
 
-  <section class="content contact" id="contact">
+  <!-- =========================
+       CONTACT
+       ========================= -->
+
+  <section
+    class="content contact"
+    id="contact"
+  >
 
     <div class="container">
+
 
       <div class="eyebrow">
         Contact
       </div>
 
+
       <h2>
         Let's talk.
       </h2>
 
+
       <div class="contact-links">
+
 
         <a href="mailto:sylwia.salapa@gmail.com">
           Email ↗
         </a>
+
 
         <a
           href="https://www.linkedin.com/in/sylviasalapa/"
@@ -768,13 +1033,17 @@
           LinkedIn ↗
         </a>
 
+
       </div>
+
 
     </div>
 
   </section>
 
+
 </main>
+
 
 
 <footer>
@@ -786,36 +1055,62 @@
 </footer>
 
 
+
 <script>
 
-  const themeToggle = document.getElementById("theme-toggle");
+  const themeToggle =
+    document.getElementById("theme-toggle");
+
 
   function updateToggleLabel() {
-    const currentTheme = document.documentElement.dataset.theme;
-
-    themeToggle.textContent =
-      currentTheme === "night" ? "Day" : "Night";
-  }
-
-  updateToggleLabel();
-
-  themeToggle.addEventListener("click", function () {
 
     const currentTheme =
       document.documentElement.dataset.theme;
 
-    const newTheme =
-      currentTheme === "night" ? "day" : "night";
 
-    document.documentElement.dataset.theme = newTheme;
+    themeToggle.textContent =
+      currentTheme === "night"
+        ? "Day"
+        : "Night";
 
-    localStorage.setItem("sylvia-theme", newTheme);
+  }
 
-    updateToggleLabel();
 
-  });
+  updateToggleLabel();
+
+
+  themeToggle.addEventListener(
+    "click",
+    function () {
+
+      const currentTheme =
+        document.documentElement.dataset.theme;
+
+
+      const newTheme =
+        currentTheme === "night"
+          ? "day"
+          : "night";
+
+
+      document.documentElement.dataset.theme =
+        newTheme;
+
+
+      localStorage.setItem(
+        "sylvia-theme",
+        newTheme
+      );
+
+
+      updateToggleLabel();
+
+    }
+  );
 
 </script>
 
+
 </body>
+
 </html>
