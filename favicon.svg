@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    .line {
+      stroke: #3B2C25;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .line {
+        stroke: #E7DED0;
+      }
+    }
+  </style>
+
+  <line
+    class="line"
+    x1="20"
+    y1="50"
+    x2="80"
+    y2="50"
+    stroke-width="5"
+    stroke-linecap="round"
+  />
+</svg>
