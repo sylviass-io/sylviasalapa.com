@@ -1,1 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Competitive intelligence has an attention problem | Sylvia Salapa</title>
+
+  <meta
+    name="description"
+    content="Competitive intelligence in B2B SaaS has never had more information. The challenge is deciding what deserves attention."
+  >
+
+  <link
+    rel="canonical"
+    href="https://sylviasalapa.com/competitive-intelligence-attention.html"
+  >
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta
+    property="og:title"
+    content="Competitive intelligence has an attention problem"
+  >
+  <meta
+    property="og:description"
+    content="The scarce resource in competitive intelligence is no longer access to information. It's attention."
+  >
+  <meta
+    property="og:url"
+    content="https://sylviasalapa.com/competitive-intelligence-attention.html"
+  >
+
+  <!-- Article structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Competitive intelligence has an attention problem",
+    "description": "Competitive intelligence in B2B SaaS has never had more information. The challenge is deciding what deserves attention.",
+    "datePublished": "2026-10-04",
+    "author": {
+      "@type": "Person",
+      "name": "Sylvia Salapa",
+      "url": "https://sylviasalapa.com/"
+    },
+    "mainEntityOfPage": "https://sylviasalapa.com/competitive-intelligence-attention.html"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("sylvia-theme");
+
+      if (savedTheme) {
+        document.documentElement.dataset.theme = savedTheme;
+      } else {
+        document.documentElement.dataset.theme =
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "night"
+            : "day";
+      }
+    })();
+  </script>
+
+  <style>
+
+    :root {
+      --background: #E8E0D3;
+      --text: #3B2C25;
+      --body-text: #54443B;
+      --muted: #7A695E;
+      --rule: #C9BCAE;
+      --header: rgba(232, 224, 211, 0.96);
+    }
+
+    html[data-theme="night"] {
+      --background: #2B211C;
+      --text: #E7DED0;
+      --body-text: #D0C3B5;
+      --muted: #A99A8D;
+      --rule: #594A41;
+      --header: rgba(43, 33, 28, 0.96);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      background: var(--background);
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: "Inter", Arial, sans-serif;
+      line-height: 1.55;
+      transition:
+        background-color 0.35s ease,
+        color 0.35s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1200px, 86%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    nav {
+      min-height: 95px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .name {
+      font-size: 20px;
+      white-space: nowrap;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .back-link {
+      font-size: 14px;
+      opacity: 0.72;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+    }
+
+    .theme-toggle {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 7px 0 5px;
+      border-bottom: 1px solid var(--text);
+      opacity: 0.72;
+    }
+
+    main {
+      border-top: 1px solid var(--rule);
+    }
+
+    article {
+      padding: 120px 0 170px;
+    }
+
+    .article-header {
+      max-width: 1000px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(52px, 7vw, 96px);
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      max-width: 1000px;
+    }
+
+    .meta {
+      margin-top: 45px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .article-body {
+      width: 60%;
+      margin-left: 34%;
+      margin-top: 100px;
+    }
+
+    .article-body p {
+      font-size: 19px;
+      color: var(--body-text);
+      margin-bottom: 28px;
+    }
+
+    .article-body .short {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 36px;
+      line-height: 1.15;
+      color: var(--text);
+      margin: 55px 0;
+    }
+
+    .roles {
+      margin: 55px 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .role {
+      padding: 25px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .role strong {
+      display: block;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 7px;
+    }
+
+    .role span {
+      color: var(--body-text);
+      font-size: 17px;
+    }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 35px 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 800px) {
+
+      .container {
+        width: 88%;
+      }
+
+      nav {
+        min-height: 75px;
+      }
+
+      .name {
+        font-size: 17px;
+      }
+
+      article {
+        padding: 90px 0 120px;
+      }
+
+      .article-body {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 70px;
+      }
+
+      .article-body p {
+        font-size: 18px;
+      }
+
+      .article-body .short {
+        font-size: 31px;
+      }
+    }
+
+    @media (max-width: 620px) {
+
+      .name span {
+        display: none;
+      }
+
+      .back-link {
+        display: none;
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+<header>
+
+  <nav class="container">
+
+    <a class="name" href="/">
+      Sylvia Salapa
+      <span>| Market & Competitive Intelligence</span>
+    </a>
+
+    <div class="nav-right">
+
+      <a class="back-link" href="/#field-notes">
+        ← Field Notes
+      </a>
+
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        type="button"
+        aria-label="Switch colour theme"
+      >
+        Night
+      </button>
+
+    </div>
+
+  </nav>
+
+</header>
+
+
+<main>
+
+  <article>
+
+    <div class="container">
+
+      <div class="article-header">
+
+        <div class="eyebrow">
+          Field Notes · 01
+        </div>
+
+        <h1>
+          Competitive intelligence has an attention problem
+        </h1>
+
+        <div class="meta">
+          04.10.2026 · 1 MIN READ
+        </div>
+
+      </div>
+
+
+      <div class="article-body">
+
+        <p>
+          Competitive intelligence in B2B SaaS has never had more information.
+        </p>
+
+        <p>
+          CRM data. Gong calls. Competitor updates. Win/loss.
+          Market signals. AI summaries.
+        </p>
+
+        <p class="short">
+          Access is no longer the problem.<br>
+          Attention is.
+        </p>
+
+        <p>
+          Modern CI is becoming less about collecting information
+          and more about deciding what deserves attention.
+        </p>
+
+        <p>
+          I see three roles emerging:
+        </p>
+
+        <div class="roles">
+
+          <div class="role">
+            <strong>Curator</strong>
+            <span>Separates signal from noise.</span>
+          </div>
+
+          <div class="role">
+            <strong>Interpreter</strong>
+            <span>Connects signals, adds context and explains what matters.</span>
+          </div>
+
+          <div class="role">
+            <strong>Architect</strong>
+            <span>Designs how intelligence is captured, connected and accessed.</span>
+          </div>
+
+        </div>
+
+        <p>
+          Tools like Salesforce, Gong, Klue, Glean and Copilot can create
+          a connected intelligence layer. AI makes that intelligence easier
+          to retrieve and interrogate.
+        </p>
+
+        <p>
+          But access to more information does not create better intelligence.
+        </p>
+
+        <p class="short">
+          Someone still has to decide what matters.
+        </p>
+
+        <p>
+          That may be where the real value of CI increasingly sits.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+    © Designed & built by Sylvia Salapa
+  </div>
+
+</footer>
+
+
+<script>
+
+  const themeToggle =
+    document.getElementById("theme-toggle");
+
+  function updateToggleLabel() {
+
+    const currentTheme =
+      document.documentElement.dataset.theme;
+
+    themeToggle.textContent =
+      currentTheme === "night"
+        ? "Day"
+        : "Night";
+  }
+
+  updateToggleLabel();
+
+  themeToggle.addEventListener(
+    "click",
+    function () {
+
+      const currentTheme =
+        document.documentElement.dataset.theme;
+
+      const newTheme =
+        currentTheme === "night"
+          ? "day"
+          : "night";
+
+      document.documentElement.dataset.theme =
+        newTheme;
+
+      localStorage.setItem(
+        "sylvia-theme",
+        newTheme
+      );
+
+      updateToggleLabel();
+    }
+  );
+
+</script>
+
+</body>
+</html>
