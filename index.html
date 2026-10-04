@@ -174,7 +174,6 @@
 
     .name,
     .nav-links,
-    .theme-toggle,
     .eyebrow,
     .location,
     .role-date,
@@ -262,28 +261,50 @@
 
       color: var(--text);
 
-      font-family: "Inter", Arial, sans-serif;
-      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      width: 34px;
+      height: 34px;
+
+      padding: 6px;
 
       cursor: pointer;
-
-      padding: 7px 0 5px;
-
-      border-bottom: 1px solid var(--text);
-
-      opacity: 0.72;
+      opacity: 0.68;
 
       transition:
         opacity 0.2s ease,
         color 0.35s ease,
-        border-color 0.35s ease;
+        transform 0.25s ease;
     }
 
     .theme-toggle:hover {
       opacity: 1;
+      transform: rotate(8deg);
+    }
+
+    .theme-icon {
+      width: 19px;
+      height: 19px;
+
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.35;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .sun-icon {
+      display: none;
+    }
+
+    html[data-theme="night"] .moon-icon {
+      display: none;
+    }
+
+    html[data-theme="night"] .sun-icon {
+      display: block;
     }
 
 
@@ -657,7 +678,14 @@
       }
 
       .theme-toggle {
-        font-size: 9px;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+      }
+
+      .theme-icon {
+        width: 18px;
+        height: 18px;
       }
 
       .hero {
@@ -778,9 +806,36 @@
         class="theme-toggle"
         id="theme-toggle"
         type="button"
-        aria-label="Switch colour theme"
+        aria-label="Switch to night mode"
+        title="Switch to night mode"
       >
-        Night
+
+        <!-- Moon: visible in day mode -->
+        <svg
+          class="theme-icon moon-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/>
+        </svg>
+
+        <!-- Sun: visible in night mode -->
+        <svg
+          class="theme-icon sun-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2"/>
+          <path d="M12 20v2"/>
+          <path d="M4.93 4.93l1.41 1.41"/>
+          <path d="M17.66 17.66l1.41 1.41"/>
+          <path d="M2 12h2"/>
+          <path d="M20 12h2"/>
+          <path d="M4.93 19.07l1.41-1.41"/>
+          <path d="M17.66 6.34l1.41-1.41"/>
+        </svg>
+
       </button>
 
     </div>
@@ -1335,21 +1390,29 @@
     document.getElementById("theme-toggle");
 
 
-  function updateToggleLabel() {
+  function updateToggleAccessibility() {
 
     const currentTheme =
       document.documentElement.dataset.theme;
 
-
-    themeToggle.textContent =
+    const nextTheme =
       currentTheme === "night"
-        ? "Day"
-        : "Night";
+        ? "day"
+        : "night";
 
+    themeToggle.setAttribute(
+      "aria-label",
+      "Switch to " + nextTheme + " mode"
+    );
+
+    themeToggle.setAttribute(
+      "title",
+      "Switch to " + nextTheme + " mode"
+    );
   }
 
 
-  updateToggleLabel();
+  updateToggleAccessibility();
 
 
   themeToggle.addEventListener(
@@ -1376,7 +1439,7 @@
       );
 
 
-      updateToggleLabel();
+      updateToggleAccessibility();
 
     }
   );
