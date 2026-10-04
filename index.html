@@ -94,6 +94,7 @@
 
     /* =========================
        COLOUR SYSTEM — DAY
+       ========================= */
 
     :root {
       --background: #E8E0D3;
@@ -114,7 +115,6 @@
       --text: #E7DED0;
       --body-text: #D0C3B5;
       --muted: #A99A8D;
-       ========================= */
       --rule: #594A41;
       --header: rgba(43, 33, 28, 0.96);
     }
@@ -138,7 +138,6 @@
     body {
       background: var(--background);
       color: var(--text);
-
       font-family: "Inter", Arial, sans-serif;
       line-height: 1.55;
 
@@ -155,7 +154,6 @@
     p {
       font-size: 18px;
       color: var(--body-text);
-
       transition: color 0.35s ease;
     }
 
@@ -180,6 +178,8 @@
     .role-date,
     .role-company,
     .thinking-number,
+    .field-note-meta,
+    .field-note-link,
     .elsewhere-label,
     .linkedin-link,
     .contact-links,
@@ -490,6 +490,57 @@
 
 
     /* =========================
+       FIELD NOTES
+       ========================= */
+
+    .field-notes-heading {
+      max-width: 850px;
+    }
+
+    .field-notes-grid {
+      margin-top: 70px;
+    }
+
+    .field-note {
+      display: grid;
+      grid-template-columns: 25% 75%;
+
+      padding: 50px 0;
+
+      border-top: 1px solid var(--rule);
+    }
+
+    .field-note:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .field-note-meta {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .field-note p {
+      max-width: 700px;
+      margin-top: 20px;
+    }
+
+    .field-note-link {
+      display: inline-block;
+
+      margin-top: 24px;
+
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+      border-bottom: 1px solid var(--text);
+
+      padding-bottom: 4px;
+    }
+
+
+    /* =========================
        ELSEWHERE
        ========================= */
 
@@ -652,7 +703,8 @@
         font-size: 13px;
       }
 
-      .nav-links a:nth-child(4) {
+      .nav-links a:nth-child(4),
+      .nav-links a:nth-child(5) {
         display: none;
       }
 
@@ -690,6 +742,7 @@
 
       .role,
       .thinking-item,
+      .field-note,
       .elsewhere-item {
         grid-template-columns: 1fr;
         gap: 18px;
@@ -760,8 +813,8 @@
         </a>
 
         <a href="#field-notes">
-  Field Notes
-</a>
+          Field Notes
+        </a>
 
         <a href="#elsewhere">
           Elsewhere
@@ -1126,6 +1179,69 @@
           </div>
 
         </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FIELD NOTES
+       ========================= -->
+
+  <section
+    class="content"
+    id="field-notes"
+  >
+
+    <div class="container">
+
+
+      <div class="eyebrow">
+        Field Notes
+      </div>
+
+
+      <h2 class="field-notes-heading">
+        Notes on intelligence, technology and attention.
+      </h2>
+
+
+      <div class="field-notes-grid">
+
+
+        <article class="field-note">
+
+          <div class="field-note-meta">
+            04.10.2026 · 1 MIN READ
+          </div>
+
+          <div>
+
+            <h3>
+              Competitive intelligence has an attention problem
+            </h3>
+
+            <p>
+              Competitive intelligence has never had more information.
+              The scarce resource is no longer access. It's attention.
+            </p>
+
+            <a
+              class="field-note-link"
+              href="/field-notes/competitive-intelligence-attention.html"
+            >
+              Read note →
+            </a>
+
+          </div>
+
+        </article>
 
 
       </div>
